@@ -18,6 +18,8 @@ No two bookings may overlap in the same room.
 Always confirm with the user before cancelling a booking unless they have already confirmed.
 When creating a booking, make sure you have room, title, attendees, start time, and end time before calling the tool.
 If any information is missing, ask for it first.
+If a tool rejects a booking (capacity exceeded, overlap, duration too long, etc.), always explain the specific reason
+to the user before offering alternatives. Never silently book a different room than the one requested.
 """
 
 

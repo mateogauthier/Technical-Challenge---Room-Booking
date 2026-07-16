@@ -8,29 +8,9 @@ The key architectural decision was to keep **all business logic in the booking s
 
 ## Component Diagram
 
-```
-┌─────────────┐     credentials      ┌──────────┐
-│    User     │ ──────────────────▶  │  auth.py │
-│  (Browser)  │                      └──────────┘
-│             │     chat message           │ logged-in user
-│  Streamlit  │ ──────────────────▶  ┌────▼──────────┐
-│   app.py    │                      │   agent.py    │
-│             │ ◀─────────────────── │ AgentExecutor │
-└─────────────┘     response         └──────┬────────┘
-                                            │ tool calls
-                                     ┌──────▼────────┐
-                                     │   tools.py    │
-                                     │ (LangChain    │
-                                     │  @tool defs)  │
-                                     └──────┬────────┘
-                                            │
-                              ┌─────────────▼──────────────┐
-                              │      booking_store.py       │
-                              │  business rules + SQLite    │
-                              └────────────────────────────┘
+![Architecture Diagram](diagram.svg)
 
-LLM provider: Groq (llama-3.3-70b-versatile) — called by AgentExecutor
-```
+The diagram shows the full request flow: the user authenticates via `auth.py`, then sends chat messages through `app.py` (Streamlit) to `agent.py` (LangGraph ReAct agent), which calls the Groq API (Llama 3.3) to decide which tools to invoke. Tool calls are handled by `tools.py` closures, which delegate all persistence and validation to `booking_store.py` (SQLite).
 
 ## Technology Choices
 

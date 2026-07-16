@@ -16,7 +16,7 @@ def make_tools(current_user: str) -> list:
             start_dt: Start datetime in YYYY-MM-DD HH:MM format (must be on a 30-min boundary).
             end_dt: End datetime in YYYY-MM-DD HH:MM format (max 3 hours after start).
         """
-        return booking_store.create_booking(room, title, attendees, start_dt, end_dt, current_user)
+        return booking_store.create_booking(room, title, int(attendees), start_dt, end_dt, current_user)
 
     @tool
     def list_available_rooms(start_dt: str, end_dt: str, attendees: int) -> dict:
@@ -27,7 +27,7 @@ def make_tools(current_user: str) -> list:
             end_dt: End datetime in YYYY-MM-DD HH:MM format.
             attendees: Number of people who will attend.
         """
-        return booking_store.list_available_rooms(start_dt, end_dt, attendees)
+        return booking_store.list_available_rooms(start_dt, end_dt, int(attendees))
 
     @tool
     def get_room_schedule(room: str, date: str) -> dict:

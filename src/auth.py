@@ -1,6 +1,6 @@
 USERS = {
-    "User1": "TechnicalChallengPromtior",
-    "User2": "TechnicalChallengPromtior",
+    "User1": "TechnicalChallengePromptior",
+    "User2": "TechnicalChallengePromptior",
 }
 
 

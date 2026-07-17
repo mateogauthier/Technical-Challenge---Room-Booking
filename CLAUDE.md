@@ -39,7 +39,7 @@ app.py (Streamlit entry point)
 - **Slots:** 30-minute increments, start times must be on a 30-min boundary
 - **Max duration:** 3 hours per booking
 - **No overlaps:** one booking per room per slot
-- **Users:** `User1` and `User2`, password `TechnicalChallengPromtior`
+- **Users:** `User1` and `User2`, password `TechnicalChallengePromptior`
 - **Every booking requires:** room, title, attendee count, start datetime, end datetime
 
 ## Key Files

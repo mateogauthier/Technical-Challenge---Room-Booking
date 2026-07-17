@@ -65,7 +65,7 @@ db.sqlite3-journal
 bookings.db
 
 # Local-only files
-docs/Challenge-Guide.pdf
+doc/Challenge-Guide.pdf
 
 # Flask stuff:
 instance/

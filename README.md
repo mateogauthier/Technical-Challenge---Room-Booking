@@ -2,7 +2,7 @@
 
 A conversational AI chatbot that lets users book meeting rooms at the Cubo Itaú office through natural language. Built as a Promtior technical challenge.
 
-**Live demo:** *(add your Railway URL here)*
+**Live demo:** *[(Railway URL)](https://technical-challenge-room-booking-production.up.railway.app/)*
 
 ---
 
